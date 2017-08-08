@@ -49,7 +49,7 @@
         (function(){
             var img = editor.selection.getRange().getClosedNode(),url;
             if(img && img.className){
-                var hasFakedClass = (img.className == "edui-faked-video"),
+                var hasFakedClass = img.className.indexOf("edui-faked-video")!=-1,
                     hasUploadClass = img.className.indexOf("edui-upload-video")!=-1;
                 if(hasFakedClass || hasUploadClass) {
                     $G("videoUrl").value = url = img.getAttribute("_url");
